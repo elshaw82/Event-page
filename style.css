@@ -20,11 +20,6 @@ h2 {
     font-size: 26px; 
 }
 
-.blobs {
-    width:100px;
-    z-index: -1;
-}
-
 /* navigation */
 
 .navigation > ul {
@@ -46,22 +41,55 @@ h2 {
 .genres {
     display:grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: 4fr 1fr;
+    grid-gap:5px;
 }
 
-
-
 .genres > h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Noto Serif', serif;  
     font-size: 26px;  
-    text-align: center;
+    text-align: center;   
+}
+
+.genres > h3:nth-child(1){
+    background-image: url(/images/pinkblog.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center; 
+}
+
+.genres > h3:nth-child(2) {
+    background-image: url(/images/yellowblob.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center; 
+}
+
+.genres > h3:nth-child(3) {
+    background-image: url(/images/blueblob.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center; 
+}
+
+.genres > h3:nth-child(4) {
+    background-image: url(/images/orangeblob.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center; 
 }
 
 .genres > h4 {
     font-family: 'Noto Serif', serif;  
-    font-size: 14px;  
+    font-size: 12px;  
     text-align: center;
+    color:#666666;
 }
+
+/* event details */
 
 .featured {
     border-top: 1px solid #e9e8e8;
@@ -79,7 +107,7 @@ h2 {
 }
 
 .artist > img {
-    width:360px;
+    width:380px;
     border-top-left-radius: 150px;
     border-bottom-left-radius: 160px;
     border-bottom-right-radius: 130px;
@@ -89,8 +117,6 @@ h2 {
 .artist {
     padding:20px;
     grid-area: image;
-    display:flex;
-    justify-content: center;
 }
 
 .date {
@@ -113,7 +139,8 @@ h2 {
 p {
     font-family: 'Noto Serif', serif; 
     font-size:12px;
-    padding: 5px ;
+    line-height: normal;
+    color:#666666
 }
 .button {
     grid-area: button;
@@ -121,6 +148,7 @@ p {
     height:50px;
     border: solid 2px #333333;
     font-family:  'Josefin Sans', sans-serif;
+    font-size: 16px;
     border-radius: 40px;
     background-color: transparent;
 }
@@ -128,7 +156,45 @@ p {
 footer {
     display:flex;
     justify-content: flex-start;
+    padding:5px;
     font-family: 'Josefin Sans', sans-serif;
     font-size:14px;
 }
 
+.fab {
+    padding-left:10px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .wrapper {
+        max-width: 300px;
+    }
+
+    .navigation {
+        max-width:300px;
+        padding:5px;
+    }
+
+    .navigation > ul {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        list-style: none;
+        font-family: 'Josefin Sans', sans-serif;
+        color:#333333;
+        padding: 0 0 30px 0;
+    }
+    .mobile-hide {
+        display:none;
+    }
+
+    .genres {
+        display:grid;
+        grid-template-columns: repeat(2, 2fr);
+        grid-template-rows: 4fr 1fr;
+        grid-gap:5px;
+    }
+
+
+  }
